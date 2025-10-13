@@ -1,0 +1,28 @@
+.header {
+  position: sticky; /* Делаем элемент липким: он остаётся видимым в верхней части экрана при скролле */
+  z-index: 100; /* Z-index определяет слойность: элемент будет поверх остальных с меньшим z-index */
+  top: 0;
+  width: 100%;
+  padding-block: fluid(22, 14);
+  border-bottom: var(--border-width-s) solid transparent; /* Нижняя граница, пока прозрачная, чтобы при анимации менять цвет */
+  animation-name: scrolling-header; /* Подключаем анимацию, которая срабатывает при скролле */
+  animation-fill-mode: both; /* Анимация будет применяться в обоих направлениях: при начале и при завершении */
+  animation-timeline: scroll(); /* Используется Scroll-Linked Animations (CSS Scroll Timeline): анимация привязана к скроллу страницы */
+  animation-range: 0 100px; /* Диапазон скролла, на котором анимация будет проигрываться (от 0px до 100px) */
+
+  /* Определяем ключевые кадры для анимации */
+  @keyframes scrolling-header {
+    to {
+      padding-block: 10px;/* При достижении конца диапазона скролла padding уменьшается до 10px */
+      background-color: var(--color-black-08); /* Фон становится полупрозрачным чёрным */
+      border-color: var(--color-black-15); /* Нижняя граница становится видимой с цветом */
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+  }
+}
