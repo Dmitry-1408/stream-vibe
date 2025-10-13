@@ -1,0 +1,92 @@
+@use "functions" as *;
+
+// Миксин для адаптивного размера текста между $min и $max
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: fluid($max, $min);
+}
+
+// Миксин скрывает элемент (делает его невидимым)
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+//  Миксин показывает элемент (делает видимым)
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+//  Центрирует содержимое по горизонтали и вертикали (flex)
+// Параметр $isInline включает inline-flex
+@mixin flex-center($isInline: false) {
+  @if ($isInline) {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+// Абсолютное позиционирование, покрывающее весь контейнер
+@mixin abs-cover {
+  position: absolute;
+  inset: 0;
+}
+
+// Абсолютное позиционирование по центру (и по X, и по Y)
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+// Абсолютное центрирование только по оси X
+@mixin abs-x {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+
+//  Абсолютное центрирование только по оси Y
+@mixin abs-y {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+// квадрат
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// визуальное сокрытие элемента
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+// стили состояния фокуса
+@mixin focus-visible {
+  outline: 2px dashed var(--color-white);
+  outline-offset: 4px;
+  transition-duration: 0s !important;
+}
+
+// состояние disabled для кнопок (не активное)
+@mixin disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
