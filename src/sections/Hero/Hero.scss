@@ -6,7 +6,7 @@
   text-align: center;
 
   @include mobile {
-    max-height: 639px;
+    min-height: 639px;
   }
 
   &__pano {
