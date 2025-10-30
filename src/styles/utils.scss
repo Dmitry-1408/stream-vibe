@@ -28,7 +28,7 @@
 }
 
 .hidden-mobile {
-  @include tablet-above {
+  @include mobile {
     display: none !important;
   }
 }
