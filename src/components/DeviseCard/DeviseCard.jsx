@@ -14,7 +14,7 @@ const DeviseCard = (props) => {
       <header className='devise-card__header'>
         <div className='devise-card__image-wrapper'>
           <img
-            class='devise-card__image'
+            className='devise-card__image'
             src={imgSrc}
             alt=''
             width={40}
