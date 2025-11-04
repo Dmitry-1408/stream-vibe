@@ -2,6 +2,7 @@ import './Questions.scss'
 import Section from "@/layouts/Section";
 import Button from "@/components/Button";
 import AccordionGroup from "@/components/AccordionGroup";
+import Accordion from "@/components/Accordion";
 
 const Questions = (props) => {
   const {
@@ -32,7 +33,17 @@ const Questions = (props) => {
       )}
     >
       <AccordionGroup columns={2}>
-        {questionsItems}
+        {questionsItems.map((question, index) => (
+          <Accordion
+            title={question}
+            id={`question-${index}`}
+            name='question'
+            isOpen={index === 0}
+            key={index}
+          >
+            <p>StreamVibe is a streaming service that allows you to watch movies and shows on demand.</p>
+          </Accordion>
+        ))}
       </AccordionGroup>
     </Section>
   )
