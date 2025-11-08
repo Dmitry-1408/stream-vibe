@@ -1,8 +1,7 @@
 import './Tabs.scss'
 import classNames from 'classnames'
-import getTabsElementsidsFromTitle
-  from "@/components/Tabs/Utils/getTabsElementsidsFromTitle";
-import TabsNavigation from "./components/TabsNavigation";
+import getTabsElementsIdsFromTitle from './utils/getTabsElementsIdsFromTitle'
+import TabsNavigation from './components/TabsNavigation'
 
 const Tabs = (props) => {
   const {
@@ -12,8 +11,6 @@ const Tabs = (props) => {
     navigationTargetElementId = null,
   } = props
 
-  const {buttonId, contentId} = getTabsElementsidsFromTitle(title)
-
   return (
     <div
       className={classNames(className, 'tabs')}
@@ -21,19 +18,16 @@ const Tabs = (props) => {
         navigationTargetElementId,
       })}
     >
-      {!navigationTargetElementId && (
-        <TabsNavigation
-          title={title}
-          items={items}
-        />
-      )}
-      <div className='tabs__body'>
+      {!navigationTargetElementId && <TabsNavigation title={title} items={items} />}
+      <div className="tabs__body">
         {items.map((item, index) => {
           const {
             title,
             children,
             isActive,
           } = item
+
+          const { buttonId, contentId } = getTabsElementsIdsFromTitle(title)
 
           return (
             <div
@@ -43,7 +37,7 @@ const Tabs = (props) => {
               id={contentId}
               aria-labelledby={buttonId}
               tabIndex={0}
-              data-js-tabs-content=' '
+              data-js-tabs-content=""
               key={index}
             >
               {children}
