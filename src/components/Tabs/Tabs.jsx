@@ -9,17 +9,23 @@ const Tabs = (props) => {
     title,
     items = [],
     navigationTargetElementId = null,
+    isEnableOnlyOnMobile = false,
   } = props
 
   return (
     <div
-      className={classNames(className, 'tabs')}
+      className={classNames(className, 'tabs', {
+        'tabs--enable-only-on-mobile': isEnableOnlyOnMobile
+      })}
       data-js-tabs={JSON.stringify({
         navigationTargetElementId,
       })}
     >
-      {!navigationTargetElementId && <TabsNavigation title={title} items={items} />}
-      <div className="tabs__body">
+      {!navigationTargetElementId && <TabsNavigation
+        title={title}
+        items={items}
+      />}
+      <div className='tabs__body'>
         {items.map((item, index) => {
           const {
             title,
@@ -27,7 +33,7 @@ const Tabs = (props) => {
             isActive,
           } = item
 
-          const { buttonId, contentId } = getTabsElementsIdsFromTitle(title)
+          const {buttonId, contentId} = getTabsElementsIdsFromTitle(title)
 
           return (
             <div
@@ -37,7 +43,7 @@ const Tabs = (props) => {
               id={contentId}
               aria-labelledby={buttonId}
               tabIndex={0}
-              data-js-tabs-content=""
+              data-js-tabs-content=''
               key={index}
             >
               {children}
