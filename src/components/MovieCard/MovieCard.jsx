@@ -2,6 +2,7 @@ import './MovieCard.scss'
 import classNames from 'classnames'
 import {Image} from "minista";
 import Badge from "@/components/Badge";
+import RatingView from "@/components/RatingView";
 
 const MovieCard = (props) => {
   const {
@@ -10,6 +11,8 @@ const MovieCard = (props) => {
     imgSrc,
     duration,
     views,
+    released,
+    rating,
     href = '/move',
   } = props
 
@@ -27,14 +30,21 @@ const MovieCard = (props) => {
       <div className='movie-card__body'>
         {duration && (
           <Badge
-          iconName='clock'
-          iconAriaLabel='Duration'
-          hasFillIcon
+            iconName='clock'
+            iconAriaLabel='Duration'
+            hasFillIcon
           >
             {duration}
           </Badge>
         )}
-        {duration && (
+
+        {rating && (
+          <Badge className='movie-card__rating-badge'>
+            <RatingView {...rating}/>
+          </Badge>
+        )}
+
+        {views && (
           <Badge
             iconName='eve'
             iconAriaLabel='Views'
@@ -43,6 +53,16 @@ const MovieCard = (props) => {
             {views}
           </Badge>
         )}
+
+        {released && (
+          <Badge className='movie-card__released-badge'>
+            Released at <time
+            className='movie-card__released-badge-label'
+            dateTime={released.dateTime}
+          >{released.label}</time>
+          </Badge>
+        )}
+
       </div>
     </a>
   )
