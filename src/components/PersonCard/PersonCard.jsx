@@ -1,0 +1,26 @@
+import './PersonCard.scss'
+import classNames from 'classnames'
+import {Image} from "minista";
+
+const PersonCard = (props) => {
+  const {
+    className,
+    imgSrc,
+    imgAlt,
+  } = props
+
+  return (
+    <div
+      className={classNames(className, 'person-card')}
+    >
+      <Image
+        className='person-card__image'
+        src={imgSrc}
+        alt={imgAlt}
+        title={imgAlt}
+      />
+    </div>
+  )
+}
+
+export default PersonCard

@@ -8,7 +8,7 @@ const SliderNavigation = (props) => {
     id,
     hasPagination = true,
     /**
-     * ' ' (default) | 'tile'
+     * ' ' (default) | 'tile' | 'rounded'
      */
     mode = ' ',
     /**
@@ -16,6 +16,7 @@ const SliderNavigation = (props) => {
      */
     position = ' ',
     isHiddenMobile,
+    buttonMode = 'black-10',
   } = props
 
 
@@ -31,7 +32,7 @@ const SliderNavigation = (props) => {
     >
       <Button
         className='slider-navigation__arrow-button slider-navigation__arrow-button--previous'
-        mode='black-10'
+        mode={buttonMode}
         iconName='arrow-left'
         label='Previous slide'
         isLabelHidden
@@ -47,7 +48,7 @@ const SliderNavigation = (props) => {
       )}
       <Button
         className='slider-navigation__arrow-button slider-navigation__arrow-button--next'
-        mode='black-10'
+        mode={buttonMode}
         iconName='arrow-right'
         label='Next slide'
         isLabelHidden
