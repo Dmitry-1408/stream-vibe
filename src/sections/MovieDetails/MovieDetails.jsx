@@ -49,6 +49,38 @@ const MovieDetails = (props) => {
       imgSrc: '/src/assets/images/people/cast-8.jpg',
       imgAlt: 'Ivan Ivanov',
     },
+    {
+      imgSrc: '/src/assets/images/people/cast-1.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-2.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-3.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-4.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-5.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-6.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-7.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast-8.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
   ]
 
   const reviewItems = [
@@ -100,6 +132,7 @@ const MovieDetails = (props) => {
       description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
       ratingValue: 4.5,
     },
+
   ]
 
   return (
@@ -154,7 +187,7 @@ const MovieDetails = (props) => {
           </Slider>
         </div>
 
-        <div className='movie-details__panel'>
+        <div className='movie-details__panel movie-details__panel--large-gap-y'>
           <header className='movie-details__panel-header'>
             <h3 className='movie-details__title'>Reviews</h3>
             <Button
@@ -225,7 +258,7 @@ const MovieDetails = (props) => {
             {/*3*/}
             <div className='movie-details__group'>
               <h3 className='movie-details__title'>
-                <Icon name='starr' />
+                <Icon name='star' />
                 <span>Ratings</span>
               </h3>
               <Ratings
