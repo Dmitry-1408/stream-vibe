@@ -4,6 +4,9 @@ import Slider from "@/components/Slider";
 import PersonCard from "@/components/PersonCard";
 import Button from "@/components/Button";
 import ReviewCard from "@/components/ReviewCard";
+import Icon from "@/components/Icon";
+import Tags from "@/components/Tags";
+import Ratings from "@/components/Ratings";
 
 const MovieDetails = (props) => {
   const {
@@ -192,7 +195,79 @@ const MovieDetails = (props) => {
       </div>
 
       <aside className='movie-details__info'>
-        <div className='movie-details__panel'></div>
+        <div className='movie-details__panel'>
+          <div className='movie-details__groups'>
+            {/*1*/}
+            <div className='movie-details__group'>
+              <h3 className='movie-details__title'>
+                <Icon name='calendar' />
+                <span>Released Year</span>
+              </h3>
+              <div className='movie-details__description'>
+                <time
+                  className='h6'
+                  dateTime='2022'
+                >
+                  2022
+                </time>
+              </div>
+            </div>
+            {/*2*/}
+            <div className='movie-details__group'>
+              <h3 className='movie-details__title'>
+                <Icon name='translate' />
+                <span>Available Languages</span>
+              </h3>
+              <Tags
+                items={['English', 'Hindi', 'Tamil', 'Telegu', 'Kannada']}
+              />
+            </div>
+            {/*3*/}
+            <div className='movie-details__group'>
+              <h3 className='movie-details__title'>
+                <Icon name='starr' />
+                <span>Ratings</span>
+              </h3>
+              <Ratings
+                items={[
+                  {title: 'IMDb', ratingValue: '4.5'},
+                  {title: 'Streamvibe', ratingValue: '4'}
+                ]}
+              />
+            </div>
+            {/*4*/}
+            <div className='movie-details__group'>
+              <h3 className='movie-details__title'>
+                <Icon name='gernes' />
+                <span>Gernes</span>
+              </h3>
+              <Tags items={['Action', 'Adventure']} />
+            </div>
+            {/*5*/}
+            <div className='movie-details__group'>
+              <h3 className='movie-details__title'>
+                Director
+              </h3>
+              <PersonCard
+                name='Rishab Shetty'
+                subtitle='From India'
+                imgSrc='/src/assets/images/people/director.jpg'
+              />
+            </div>
+            {/*6*/}
+            <div className='movie-details__group'>
+              <h3 className='movie-details__title'>
+                Music
+              </h3>
+              <PersonCard
+                name='B. Ajaneesh Loknath'
+                subtitle='From India'
+                imgSrc='/src/assets/images/people/music.jpg'
+              />
+            </div>
+
+          </div>
+        </div>
       </aside>
 
     </section>
