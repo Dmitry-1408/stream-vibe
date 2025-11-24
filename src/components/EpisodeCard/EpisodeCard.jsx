@@ -30,7 +30,7 @@ const EpisodeCard = (props) => {
           height={118}
         />
         <button
-          class='episode-card__play-button is-active'
+          className='episode-card__play-button is-active'
           aria-label={playButtonTitle}
           title={playButtonTitle}
         >
