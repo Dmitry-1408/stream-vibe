@@ -32,7 +32,6 @@ const Select = (props) => {
       data-js-select=' '
     >
       <label
-        htmlFor=''
         className={classNames('select__label', {
           'visually-hidden': isLabelHidden,
         })}
