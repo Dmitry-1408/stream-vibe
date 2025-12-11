@@ -1,24 +1,19 @@
-import './Plans.scss'
-import Section from "@/layouts/Section";
-import Grid from "@/components/Grid";
-import planGroups from "./planGroups";
-import PlanCard from "@/components/PlanCard";
-import TabsNavigation from "@/components/Tabs/components/TabsNavigation";
-import Tabs from "@/components/Tabs";
+import Section from '@/layouts/Section'
+import Grid from '@/components/Grid'
+import planGroups from './planGroups'
+import PlanCard from '@/components/PlanCard'
+import TabsNavigation from '@/components/Tabs/components/TabsNavigation'
+import Tabs from '@/components/Tabs'
 
-const Plans = (props) => {
-  const {
-    className,
-  } = props
-
+const Plans = () => {
   const tabsTitle = 'plans-tabs'
   const tabsNavigationId = 'plans-tabs-navigation'
 
   return (
     <Section
-      title='Choose the plan that s right for you'
-      titleId='plans-id'
-      description='Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!'
+      title="Choose the plan that's right for you"
+      titleId="plans-id"
+      description="Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!"
       actions={(
         <TabsNavigation
           id={tabsNavigationId}
@@ -27,8 +22,6 @@ const Plans = (props) => {
         />
       )}
     >
-
-
       <Tabs
         title={tabsTitle}
         navigationTargetElementId={tabsNavigationId}
