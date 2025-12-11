@@ -1,6 +1,7 @@
 import postcssPxToRem from 'postcss-pxtorem'
+import postcssPresetEnv from 'postcss-preset-env' /* Новый код */
 
-export default ({env}) => {
+export default ({ env }) => {
   const isProd = env === 'production'
   const plugins = []
 
@@ -10,6 +11,11 @@ export default ({env}) => {
         propList: ['*'],
         mediaQuery: true,
       })
+    )
+
+    /* Новый код: */
+    plugins.push(
+      postcssPresetEnv()
     )
   }
 
